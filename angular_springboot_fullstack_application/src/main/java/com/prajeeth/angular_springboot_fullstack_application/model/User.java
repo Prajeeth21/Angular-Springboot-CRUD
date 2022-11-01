@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,6 +31,10 @@ public class User implements Serializable {
     private String[] authorities;
     private boolean isActive;
     private boolean isNotLocked;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "auth_provider")
+    private AuthenticationProvider authenticationProvider;
     
     public User() {}
 
@@ -135,6 +141,13 @@ public class User implements Serializable {
         this.isNotLocked = isNotLocked;
     }
 
-    public void setProfileImageUrl(Object temporaryProfileImageUrl) {
+    public AuthenticationProvider getAuthenticationProvider() {
+        return authenticationProvider;
     }
+
+    public void setAuthenticationProvider(AuthenticationProvider authenticationProvider) {
+        this.authenticationProvider = authenticationProvider;
+    }
+    
+
 }

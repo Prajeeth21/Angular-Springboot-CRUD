@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var HeaderType = /*#__PURE__*/(() => {\n  (function (HeaderType) {\n    HeaderType[\"AUTHORIZATION\"] = \"Authorization\";\n    HeaderType[\"JWT_TOKEN\"] = \"Jwt-Token\";\n  })(HeaderType || (HeaderType = {}));\n\n  return HeaderType;\n})();","map":null,"metadata":{},"sourceType":"module"}
